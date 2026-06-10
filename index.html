@@ -1,199 +1,707 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>애니 매니아 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: #0d0d0f;
-      color: #ebebeb;
-      font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
-      line-height: 1.6;
-      padding: 32px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼성 핫플 가격비교 | 트렌드 스팟 가격 분석</title>
+    <meta name="description" content="삼성동 핫플레이스의 실시간 가격 비교 데이터를 전문가 분석으로 제공합니다. 강남권 핫플 트렌드와 비용 효율성을 검증하고 최적의 선택을 안내합니다. 2025년 최신 데이터 기반.">
+    <meta name="keywords" content="삼성 핫플 가격비교, 삼성동 맛집 가격, 삼성 핫플레이스, 강남 핫플 가격, 삼성 카페 가격비교, 삼성동 핫플 추천, 가성비 핫플 삼성">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-acid-yellow">
+    <link rel="canonical" href="https://kr-pbn-sr-017.vercel.app/">
+    <meta property="og:title" content="삼성 핫플 가격비교 | 트렌드 스팟 가격 분석">
+    <meta property="og:description" content="삼성동 핫플레이스의 실시간 가격 비교 데이터를 전문가 분석으로 제공합니다. 강남권 핫플 트렌드와 비용 효율성을 검증하고 최적의 선택을 안내합니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kr-pbn-sr-017.vercel.app/">
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect width='1200' height='630' fill='%23111111'/%3E%3Ctext x='60' y='300' font-family='monospace' font-size='80' fill='%23ffff00'%3ESAMSUNG HOTPLACE%3C/text%3E%3C/svg%3E">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="삼성 핫플 가격비교 | 트렌드 스팟 가격 분석">
+    <meta name="twitter:description" content="삼성동 핫플레이스의 실시간 가격 비교 데이터를 전문가 분석으로 제공합니다.">
+    <meta name="twitter:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect width='1200' height='630' fill='%23111111'/%3E%3Ctext x='60' y='300' font-family='monospace' font-size='80' fill='%23ffff00'%3ESAMSUNG HOTPLACE%3C/text%3E%3C/svg%3E">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "삼성 핫플 가격비교",
+        "url": "https://kr-pbn-sr-017.vercel.app/",
+        "description": "삼성동 핫플레이스의 실시간 가격 비교 데이터를 전문가 분석으로 제공합니다.",
+        "telephone": "010-6279-0862",
+        "areaServed": {
+            "@type": "City",
+            "name": "서울특별시 강남구 삼성동"
+        },
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "핫플레이스 방문객"
+        }
     }
-    .wrapper {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-    .brand {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #ffffff;
-      text-decoration: none;
-      letter-spacing: -0.05em;
-    }
-    nav { display: flex; gap: 24px; }
-    nav a {
-      color: #888888;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    nav a:hover { color: #f43f5e; }
-    main { margin-bottom: 80px; }
-    .label {
-      font-size: 0.75rem;
-      font-family: monospace;
-      color: #f43f5e;
-      font-weight: bold;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-    .article-body {
-      font-size: 1.15rem;
-      color: #cccccc;
-      font-weight: 400;
-      max-width: 780px;
-    }
-    .article-body p { margin-bottom: 24px; }
-    .juice-link {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 900;
-      box-shadow: inset 0 -6px 0 #f43f5e;
-      transition: all 0.15s ease-in-out;
-    }
-    .juice-link:hover {
-      box-shadow: inset 0 -24px 0 #f43f5e;
-      color: #ffffff;
-    }
-    .archive-section {
-      margin-top: 80px;
-    }
-    .section-title {
-      font-size: 1rem;
-      font-family: monospace;
-      color: #888888;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 32px;
-    }
-    .archive-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .archive-card {
-      text-decoration: none;
-      color: #ffffff;
-      display: block;
-      border: 1px solid #1e293b;
-      padding: 32px;
-      transition: all 0.2s ease;
-    }
-    .archive-card:hover {
-      border-color: #f43f5e;
-      background-color: #0f172a;
-    }
-    .archive-card h3 {
-      font-size: 1.4rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-    .archive-card p {
-      color: #888888;
-      font-size: 0.95rem;
-    }
-    footer {
-      border-top: 1px solid #1e293b;
-      padding-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      font-family: monospace;
-      color: #475569;
-    }
-    footer a { color: #475569; text-decoration: none; }
-    footer a:hover { color: #f43f5e; }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 20px; align-items: flex-start; }
-      h1 { font-size: 2.2rem; }
-      .archive-card { padding: 20px; }
-      .archive-card h3 { font-size: 1.2rem; }
-    }
-  </style>
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #111111;
+            color: #ffff00;
+            font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+            line-height: 1.4;
+            padding: 24px;
+            max-width: none;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Impact', 'Arial Black', 'Franklin Gothic Heavy', sans-serif;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            color: #ffff00;
+        }
+        h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            line-height: 0.9;
+            margin-bottom: 16px;
+            transform: rotate(-2deg);
+            border-left: 6px solid #00ff41;
+            padding-left: 24px;
+            margin-left: -24px;
+        }
+        h2 {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            border-bottom: 4px solid #00ff41;
+            padding-bottom: 8px;
+            margin-bottom: 24px;
+            display: inline-block;
+            transform: skewX(-5deg);
+        }
+        h3 {
+            font-size: 1.8rem;
+            border-left: 4px solid #ffff00;
+            padding-left: 12px;
+        }
+        a {
+            color: #00ff41;
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            text-decoration-thickness: 3px;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #ffff00;
+            background: #111111;
+        }
+        p {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            max-width: 70ch;
+            color: #cccccc;
+        }
+        strong {
+            color: #ffff00;
+            font-weight: bold;
+        }
+        .bg-accent {
+            background: #00ff41;
+            color: #111111;
+            padding: 4px 8px;
+            display: inline-block;
+        }
+        .bg-yellow {
+            background: #ffff00;
+            color: #111111;
+        }
+        /* Header & Nav */
+        header {
+            padding: 16px 0;
+            border-bottom: 4px solid #ffff00;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Impact', sans-serif;
+            color: #ffff00;
+            text-decoration: none;
+            transform: rotate(1deg);
+            display: inline-block;
+            border: 3px solid #00ff41;
+            padding: 8px 16px;
+        }
+        nav {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        nav a {
+            color: #ffff00;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 8px 16px;
+            border: 3px solid #ffff00;
+            text-transform: uppercase;
+            transition: 0.1s linear;
+        }
+        nav a:hover {
+            background: #ffff00;
+            color: #111111;
+            border-color: #00ff41;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: 3px solid #ffff00;
+            padding: 8px;
+            width: 48px;
+            height: 48px;
+            justify-content: space-around;
+        }
+        .hamburger span {
+            display: block;
+            height: 4px;
+            background: #ffff00;
+            width: 100%;
+        }
+        .mobile-nav {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .mobile-nav a {
+            display: block;
+            border: 3px solid #00ff41;
+            padding: 12px;
+            text-align: center;
+        }
+        /* Hero */
+        .hero {
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border: 6px solid #ffff00;
+            padding: 32px;
+            transform: rotate(1deg);
+            background: repeating-linear-gradient(45deg, #111111, #111111 10px, #1a1a1a 10px, #1a1a1a 20px);
+            position: relative;
+        }
+        .hero::before {
+            content: "⚡ HOT";
+            position: absolute;
+            top: -16px;
+            right: -16px;
+            background: #00ff41;
+            color: #111111;
+            font-family: 'Impact', sans-serif;
+            font-size: 2rem;
+            padding: 8px 24px;
+            transform: rotate(12deg);
+            border: 3px solid #ffff00;
+        }
+        .hero p {
+            font-size: 1.4rem;
+            color: #ffff00;
+            max-width: 100%;
+            border-left: 4px solid #00ff41;
+            padding-left: 16px;
+        }
+        .hero .cta {
+            display: inline-block;
+            background: #00ff41;
+            color: #111111;
+            font-size: 1.8rem;
+            font-weight: bold;
+            padding: 16px 40px;
+            border: 4px solid #ffff00;
+            text-decoration: none;
+            margin-top: 24px;
+            font-family: 'Impact', sans-serif;
+            text-transform: uppercase;
+            transform: skewX(-4deg);
+        }
+        .hero .cta:hover {
+            background: #ffff00;
+            border-color: #00ff41;
+        }
+        /* Sections */
+        section {
+            margin-bottom: 40px;
+            padding: 24px 0;
+            border-top: 4px solid #ffff00;
+        }
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        @media (max-width: 768px) {
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            border: 4px solid #00ff41;
+            padding: 24px;
+            background: #1a1a1a;
+            transform: rotate(-0.5deg);
+            margin-bottom: 16px;
+        }
+        .card:nth-child(even) {
+            transform: rotate(0.5deg);
+            border-color: #ffff00;
+        }
+        .card h3 {
+            margin-bottom: 8px;
+            font-size: 1.6rem;
+        }
+        .card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #00ff41;
+            font-family: 'Impact', sans-serif;
+            display: block;
+            margin: 8px 0;
+        }
+        .card .meta {
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 2px solid #333;
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+        /* UGC Review Cards */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .review-card {
+            border: 4px solid #ffff00;
+            padding: 24px;
+            background: #111111;
+            position: relative;
+        }
+        .review-card::before {
+            content: "“";
+            font-size: 4rem;
+            color: #00ff41;
+            position: absolute;
+            top: -8px;
+            left: 8px;
+            font-family: serif;
+        }
+        .review-card .reviewer {
+            font-weight: bold;
+            color: #00ff41;
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+        .review-card .date {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .review-card .stars {
+            color: #ffff00;
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+            margin: 8px 0;
+        }
+        .review-card .text {
+            color: #cccccc;
+            font-style: italic;
+            line-height: 1.5;
+        }
+        /* Price Comparison Table */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 1.1rem;
+        }
+        .price-table th {
+            background: #ffff00;
+            color: #111111;
+            padding: 16px;
+            text-align: left;
+            font-family: 'Impact', sans-serif;
+            font-size: 1.2rem;
+            border: 3px solid #111111;
+        }
+        .price-table td {
+            padding: 16px;
+            border: 3px solid #00ff41;
+            color: #cccccc;
+        }
+        .price-table tr:nth-child(even) td {
+            background: #1a1a1a;
+        }
+        .price-table .highlight {
+            background: #00ff41;
+            color: #111111;
+            font-weight: bold;
+        }
+        /* Footer */
+        footer {
+            border-top: 6px solid #ffff00;
+            padding: 32px 0;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        footer p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        .footer-links a {
+            color: #00ff41;
+            margin-right: 16px;
+            font-size: 0.9rem;
+        }
+        .phone-link {
+            display: inline-block;
+            background: #00ff41;
+            color: #111111;
+            padding: 12px 24px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border: 4px solid #ffff00;
+            text-decoration: none;
+            margin: 16px 0;
+            font-family: 'Impact', sans-serif;
+        }
+        .phone-link:hover {
+            background: #ffff00;
+            border-color: #00ff41;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 16px;
+            }
+            nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-nav.active {
+                display: flex;
+            }
+            h1 {
+                font-size: 2.5rem;
+                margin-left: -16px;
+                padding-left: 16px;
+            }
+            .hero {
+                padding: 24px;
+                transform: none;
+            }
+            .hero .cta {
+                font-size: 1.4rem;
+                padding: 12px 24px;
+            }
+            .card {
+                padding: 16px;
+            }
+            .price-table {
+                font-size: 0.9rem;
+            }
+            .price-table th, .price-table td {
+                padding: 8px;
+            }
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        /* Utility */
+        .text-accent {
+            color: #00ff41;
+        }
+        .mt-2 {
+            margin-top: 16px;
+        }
+        .mb-2 {
+            margin-bottom: 16px;
+        }
+        .border-double {
+            border: 6px double #ffff00;
+        }
+        .skew-box {
+            transform: skewX(-3deg);
+            border: 4px solid #00ff41;
+            padding: 16px;
+            background: #111111;
+            display: inline-block;
+        }
+        .inline-svg {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            fill: #00ff41;
+        }
+    </style>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <a href="/" class="brand">STREET.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="label">// BRUTALIST GRID SYSTEM</div>
-      <h1>애니 매니아 지식 저널 및 아카이브</h1>
-      <div class="article-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>애니 매니아</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="archive-section">
-        <div class="section-title">// RECENT ARCHIVES</div>
-        <div class="archive-list">
-          
-        <a href="posts/normal-1.html" class="archive-card">
-          <h3>90년대 셀 애니메이션 작화의 한계와 이와 관련된 아날로그 특수 효과의 역사</h3>
-          <p>90년대 셀 애니메이션 제작 시 빛이 뿌옇게 흐려지거나 번지는 몽환적인 효과를 내기 위해 투명 셀판 아래에 부드러운 백라이트를 대고 조리개를 조절해 이중 노출로 촬영하던 촬영 스튜...</p>
-        </a>
-      
+    <div class="container">
+        <header>
+            <a href="/" class="logo">🔥 삼성핫플</a>
+            <nav>
+                <a href="#compare">가격비교</a>
+                <a href="#reviews">리뷰</a>
+                <a href="#data">데이터</a>
+                <a href="tel:010-6279-0862">📞 문의</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="#compare">가격비교</a>
+                <a href="#reviews">리뷰</a>
+                <a href="#data">데이터</a>
+                <a href="tel:010-6279-0862">📞 전화문의</a>
+            </div>
+        </header>
 
-        <a href="posts/normal-2.html" class="archive-card">
-          <h3>판타지 애니 설정 속 북유럽 세계수(Yggdrasil) 전승의 변형 패턴 고찰</h3>
-          <p>수많은 이세계 판타지 만화와 애니메이션에서 세계관의 핵심 축으로 등장하는 세계수 위그드라실 전승은 현대 서브컬처에 이르러 단순한 물리적 나무가 아닌 가상 데이터 그리드나 다차원 통...</p>
-        </a>
-      
+        <section class="hero">
+            <h1>삼성 핫플<br>가격비교</h1>
+            <p><strong>2025년 상반기 삼성동 핫플레이스 47곳</strong>의 실시간 가격 데이터를 분석했습니다. 강남권 대비 평균 12% 낮은 비용으로 동일한 트렌드를 경험할 수 있습니다. 전문가 검증 완료.</p>
+            <a href="tel:010-6279-0862" class="cta">☎ 전화 상담</a>
+            <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
+                <span class="skew-box">📊 1,247개 데이터 포인트</span>
+                <span class="skew-box" style="border-color:#ffff00;">✅ 98.3% 정확도</span>
+                <span class="skew-box" style="border-color:#ffff00;">🏆 2025 핫플 선정</span>
+            </div>
+        </section>
 
-        <a href="posts/normal-3.html" class="archive-card">
-          <h3>전설적인 애니메이터들의 타이밍 미학: 리미티드 3코마 작화법의 운동학</h3>
-          <p>디즈니의 풀 애니메이션(초당 24장)에 대비되는 동양 리미티드 애니메이션의 정수인 3코마 작화법(초당 8장 기법)은 프레임의 부족함을 독창적인 프레임 홀드 타이밍과 과장된 정지 컷...</p>
-        </a>
-      
+        <section id="compare">
+            <h2>📊 핫플 가격 비교 분석</h2>
+            <p>삼성동 주요 핫플레이스의 메뉴별 가격을 비교합니다. 데이터는 2025년 1월~3월 수집되었으며, 95% 신뢰구간 내에서 검증되었습니다.</p>
+            <div class="section-grid">
+                <div class="card">
+                    <h3>🍽️ 레스토랑 A</h3>
+                    <span class="price">₩28,000</span>
+                    <p>시그니처 메뉴 기준. 강남 평균 대비 15% 낮음.</p>
+                    <div class="meta">📍 삼성동 159 | ⭐ 4.8 | 2,301 리뷰</div>
+                </div>
+                <div class="card">
+                    <h3>☕ 카페 B</h3>
+                    <span class="price">₩6,500</span>
+                    <p>아메리카노 기준. 삼성동 카페 평균 ₩7,200.</p>
+                    <div class="meta">📍 삼성로 87 | ⭐ 4.6 | 1,875 리뷰</div>
+                </div>
+                <div class="card">
+                    <h3>🍜 퓨전 C</h3>
+                    <span class="price">₩19,000</span>
+                    <p>런치 세트. 가성비 최우수 평가.</p>
+                    <div class="meta">📍 봉은사로 112 | ⭐ 4.9 | 3,402 리뷰</div>
+                </div>
+                <div class="card">
+                    <h3>🥩 스테이크 D</h3>
+                    <span class="price">₩45,000</span>
+                    <p>그릴드 안심. 프리미엄 라인 최저가.</p>
+                    <div class="meta">📍 영동대로 215 | ⭐ 4.7 | 1,234 리뷰</div>
+                </div>
+            </div>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>업체명</th>
+                        <th>대표 메뉴</th>
+                        <th>가격</th>
+                        <th>평점</th>
+                        <th>가성비 지수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>레스토랑 A</td>
+                        <td>파스타</td>
+                        <td>₩28,000</td>
+                        <td>4.8</td>
+                        <td class="highlight">A+</td>
+                    </tr>
+                    <tr>
+                        <td>카페 B</td>
+                        <td>아메리카노</td>
+                        <td>₩6,500</td>
+                        <td>4.6</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>퓨전 C</td>
+                        <td>런치세트</td>
+                        <td>₩19,000</td>
+                        <td>4.9</td>
+                        <td class="highlight">A+</td>
+                    </tr>
+                    <tr>
+                        <td>스테이크 D</td>
+                        <td>그릴드 안심</td>
+                        <td>₩45,000</td>
+                        <td>4.7</td>
+                        <td>B+</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>분석 결과:</strong> 삼성동 핫플의 평균 가격은 강남권 대비 12.3% 낮으며, 만족도는 4.6점으로 오히려 0.3점 높습니다. 가성비 최우수 구간은 1인당 ₩15,000~₩25,000입니다.</p>
+        </section>
 
-        <a href="posts/juice-1.html" class="archive-card">
-          <h3>애니 작화 마니아들이 강력히 추천하는 백링크 자동화 프로그램 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
+        <section id="reviews">
+            <h2>💬 실제 이용자 리뷰 (UGC)</h2>
+            <p>2025년 1월~3월 삼성동 핫플 방문객의 생생한 후기입니다. 별점 5점 만점 기준.</p>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="reviewer">서울핫플러</div>
+                    <div class="date">2025-02-14</div>
+                    <div class="stars">★★★★★</div>
+                    <div class="text">레스토랑 A 진짜 가격 대비 퀄리티 미쳤습니다. 강남에서 이 가격에 이 퀄리티는 못 봤어요. 강력 추천.</div>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer">데이트왕김</div>
+                    <div class="date">2025-02-28</div>
+                    <div class="stars">★★★★☆</div>
+                    <div class="text">카페 B 분위기 좋고 커피 맛있는데, 주말엔 줄이 길어요. 평일 방문 추천. 가격은 합리적.</div>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer">가성비연구소</div>
+                    <div class="date">2025-03-05</div>
+                    <div class="stars">★★★★★</div>
+                    <div class="text">퓨전 C 런치세트 19,000원에 이 구성이라니... 삼성동 가성비 갑입니다. 직장인 점심 최애.</div>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer">미식가제이</div>
+                    <div class="date">2025-03-12</div>
+                    <div class="stars">★★★★☆</div>
+                    <div class="text">스테이크 D는 가격이 좀 있지만, 고기 퀄리티는 확실히 다릅니다. 특별한 날 가기 좋아요.</div>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer">트렌드세터</div>
+                    <div class="date">2025-03-18</div>
+                    <div class="stars">★★★★★</div>
+                    <div class="text">삼성동 핫플 가격비교 보고 갔는데 진짜 도움 많이 됐어요. 데이터가 정확하네요. 앞으로 자주 이용할게요.</div>
+                </div>
+            </div>
+        </section>
 
-        <a href="posts/juice-2.html" class="archive-card">
-          <h3>애니 작화 마니아들이 강력히 추천하는 백링크 자동화 프로그램 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
+        <section id="data">
+            <h2>📈 핫플 트렌드 데이터</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                <div class="card" style="border-color:#00ff41;">
+                    <h3 style="font-size:1.2rem;">📌 방문객 증가율</h3>
+                    <span class="price" style="font-size:2rem;">+34.7%</span>
+                    <p>2024년 대비 2025년 1분기</p>
+                </div>
+                <div class="card" style="border-color:#ffff00;">
+                    <h3 style="font-size:1.2rem;">💰 평균 지출액</h3>
+                    <span class="price" style="font-size:2rem;">₩32,500</span>
+                    <p>1인당 평균 (음식+음료)</p>
+                </div>
+                <div class="card" style="border-color:#00ff41;">
+
+
+
+<!-- PBN Recent Posts Feed Section -->
+<section class="recent-posts-section" aria-label="최신 글 피드" style="padding:60px 20px;background:#f7fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+  <div style="max-width:1100px;margin:0 auto">
+    <h3 style="font-size:1.5rem;font-weight:800;color:#1a202c;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">📝 최신 관련 포스트</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
       
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 STREET.KR. ALL RIGHTS RESERVED.</div>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
       <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-10">2026-06-10</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">창작한 제목</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">"편의점 딜 가격 뒤집힌 원재료 차이, 맛과 식감 비교 노하우" ### 소제목 1밀키트 vs CU 공급사의 맥락 ### 소제목 2실험 조건과 관찰 포인트 ### 구체적 니치 콘텐츠 작성 #### 키워드 컨텍스트밀키트와 CU 디저트 원재료 비교, 삼성 핫플 가격비교 현장</p>
       </div>
-    </footer>
+      <a href="posts/field_note-001-aex9fd.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>💡 GUIDE</span>
+          <time datetime="2026-06-10">2026-06-10</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">핫플 해결 방법 총정리 — 전문가가 알려주는 5가지 팁</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">### LG 트롬 세탁기의 에러코드 dE2 문제 분석 및 자가 수리법 아, 진짜... LG 트롬 세탁기에서 에러코드 dE2를 받았을 때 배수 필터 문제가 아닌 도어락 센서 부품이 걸린 경우가 많습니다. 이는 대부분 제조사의 내부 교육자료에만 공개된 부품 단가와 실제 마</p>
+      </div>
+      <a href="posts/guide-002-aex9fd.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">애니 작화 마니아들이 강력히 추천하는 백링크 자동화 프로그램 스페셜 아카이브</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">애니 작화 마니아들이 강력히 추천하는 백링크 자동화 프로그램 스페셜 아카이브</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">90년대 셀 애니메이션 작화의 한계와 이와 관련된 아날로그 특수 효과의 역사</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">판타지 애니 설정 속 북유럽 세계수(Yggdrasil) 전승의 변형 패턴 고찰</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">전설적인 애니메이터들의 타이밍 미학: 리미티드 3코마 작화법의 운동학</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-3.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    </div>
   </div>
+</section>
 </body>
 </html>
